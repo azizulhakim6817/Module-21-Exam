@@ -10,14 +10,6 @@ const ObjectId = mongoose.Types.ObjectId;
 export const StudentregisterService = async (req) => {
   try {
     let reqBody = req.body;
-
-    //md5 ........................................
-    reqBody.password = md5(reqBody.password);
-
-    // Hash the password using bcrypt ............
-    /* const saltRounds = 10;
-    reqBody.password = await bcrypt.hash(reqBody.password, saltRounds); */
-
     let data = await usersModel.create(reqBody);
     return { status: "success", data: data };
   } catch (e) {

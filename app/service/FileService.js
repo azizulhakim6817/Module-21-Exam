@@ -10,7 +10,6 @@ const __dirname = dirname(__filename);
 export const uploadSingleFileService = async (req) => {
   try {
     const uploadedFile = req.files.file;
-
     const uploadPath = path.join(
       __dirname,
       "../../uploads",
